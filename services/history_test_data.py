@@ -8,6 +8,8 @@ from utils.datetime_utils import date_minus_days, current_date, string_to_date
 from utils.settings import settings
 from utils.util import read_dict_from_file, write_dict_to_file, pretty_dict
 
+# методы используются в режиме history_test
+
 # тестовые даты старта и остановки. Определяются как самая ранняя/поздняя дата свечей при инициализации
 # данных в init_history_test_data()
 test_current_date = None

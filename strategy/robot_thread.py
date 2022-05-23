@@ -14,6 +14,8 @@ from utils.datetime_utils import current_date, string_to_date, date_minus_minute
 from utils.settings import settings
 
 
+# отдельный торговый поток. Возможно, следует иметь по одному отдельному потоку на каждый инструмент торговли.
+
 def get_candles(instrument_info, last_processed_date):
     if settings()['MAIN']['mode'] == 'history_test':
         exchange = instrument_info['exchange']
@@ -25,7 +27,7 @@ def get_candles(instrument_info, last_processed_date):
                                    'CANDLE_INTERVAL_1_MIN')['candles']
     return None
 
-
+# TODO take profit/stop loss вынести в trade_signal
 def process_instrument(account_info, instrument, trading_info, last_processed_date):
     instrument_key = make_instrument_key(instrument['exchange'], instrument['ticker'])
     instrument_info = get_instrument_info_by_key(instrument_key)

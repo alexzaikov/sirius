@@ -22,6 +22,7 @@ def read_dict_from_file(filename):
         return None
 
 
+# TODO с деньгами так поступать нехорошо...
 def price_to_float(units, nano):
     return float(units) + float(nano)/1000000000
 

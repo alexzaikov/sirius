@@ -25,7 +25,8 @@ if __name__ == '__main__':
 
     args = parse_args()
 
-    # инициализация робота - скачиваем и кэшируем все shares в файле data/cache_instruments
+    # инициализация робота: проверка токенов, создание рабочих директорий,
+    # однократное скачивание кэша акций в файл data/cache_instruments
     init_robot()
 
     if args.sandbox_control:
@@ -41,4 +42,5 @@ if __name__ == '__main__':
         # запуск для подготовки файла для тестирования на исторических данных
         prepare_history_file(args.prepare_history_days)
     elif args.start_trade:
+        # старт отдельного потока торговли
         start_trade()

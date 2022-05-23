@@ -36,12 +36,6 @@ def load_trading_instruments():
 def start_trade():
     account_info = prepare_account_info()
 
-    if account_info is None:
-        logging.fatal("Failed to load account info. May be you should check tokens.")
-        quit(-1)
-    else:
-        logging.info("Account info loaded = {}".format(account_info))
-
     has_enough_money(account_info)
 
     trading_info = load_trading_info()
@@ -64,8 +58,6 @@ def start_trade():
                 print_trading_info(trading_info)
             else:
                 logging.warning("Unknown command '{}'".format(command))
-
-
 
     print_trading_info(trading_info)
 

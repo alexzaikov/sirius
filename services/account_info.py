@@ -6,6 +6,10 @@ from utils.settings import settings
 from utils.util import price_to_float
 
 
+# управление счётом. если не удалось загрузить - это fatal, завершаем программу
+# если у пользователя несколько счетов, выбирается первый
+# TODO - добавить в settings выбор счёта
+
 def create_account_info(account_id):
     return {'account_id': account_id}
 
